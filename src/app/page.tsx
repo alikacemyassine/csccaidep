@@ -1007,8 +1007,34 @@ RULES:
     sendToAI(updatedMessages, questionCount + 1);
   };
 
-  const handleSubmit = () => {
-    setView('success');
+  const handleSubmit = async () => {
+    if (isLoading) return;
+    setIsLoading(true);
+    try {
+      // Create final data object
+      const finalData = {
+        ...formData,
+        chatMessages: messages,
+      };
+
+      const res = await fetch('/api/submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(finalData),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      // Success
+      setView('success');
+    } catch (error) {
+      console.error(error);
+      alert('Failed to submit your application. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

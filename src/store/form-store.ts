@@ -19,6 +19,7 @@ export interface FormData {
   toolsTechnologies: string[];
   hasProjectExperience: string;
   projectDescription: string;
+  chatMessages: { role: string; content: string }[];
   
   // Step 4: Interests
   interests: string[];
@@ -56,6 +57,7 @@ const initialFormData: FormData = {
   toolsTechnologies: [],
   hasProjectExperience: '',
   projectDescription: '',
+  chatMessages: [],
   interests: [],
   preferredTeammates: '',
   avoidTeammates: '',
