@@ -22,6 +22,8 @@ model Submission {
   aiLevel              String
   toolsTechnologies    String[] // Array of strings for PostgreSQL
   interests            String[] // Array of strings for PostgreSQL
+  preferredTeammates   String?
+  avoidTeammates       String?
   whyJoin              String
   yearGoals            String
   hasProjectExperience String
