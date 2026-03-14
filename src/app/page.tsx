@@ -280,10 +280,10 @@ function Step1BasicInfo() {
       <div className="space-y-5">
         {/* Full Name */}
         <div className="space-y-2">
-          <Label htmlFor="fullName" className="text-gray-700 text-sm font-medium">Full Name</Label>
+          <Label htmlFor="fullName" className="text-gray-900 font-medium">Full Name *</Label>
           <Input
             id="fullName"
-            placeholder="John Doe"
+            placeholder="yacine abed"
             value={formData.fullName}
             onChange={(e) => updateFormData({ fullName: e.target.value })}
             className="h-11 rounded-lg border-gray-300"
